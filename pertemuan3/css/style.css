@@ -1,0 +1,88 @@
+
+body 
+{
+    background-image: url('../images/bg.webp');
+}
+
+
+.kotak_putih 
+{
+    width: 800px;
+    background-color: white;
+    margin: 0 auto;
+    border: 2px solid black;
+
+}
+
+.header
+{
+    padding: 20px;
+}
+
+.header ul
+{
+    list-style: none;
+    display: flex;
+    margin-left: -38px;
+}
+
+.header ul li
+{
+    margin-right: 30px;
+}
+
+.header ul li a
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: #2165f6;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.header ul li a:hover
+{
+    background-color: #2165f6;
+    color: white;
+    transition: .5s;
+}
+
+
+.thumbnail
+{
+    background-image: url('../images/hutan.jpg');
+    height: 300px;
+    background-size: cover;
+    background-position: 0 -130px;
+    border-top:5px solid #2165f6;
+    border-bottom: 5px solid salmon;
+
+}
+
+.artikel
+{
+    margin: 20px;
+}
+
+.judul p 
+{
+    margin-top: -20px;
+    font-size: 14px;
+}
+
+.deskripsi
+{
+    text-align: justify;
+}
+
+
+.footer
+{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    letter-spacing: 2px;
+}
+
+

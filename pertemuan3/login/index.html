@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+
+    <div class="kotak">
+
+        <img class="icon" src="man.png" width="90">
+
+        <h2 style="text-align: center;">Login ke Akun anda</h2>
+
+        <div class="input-grup">
+
+            <input type="text" placeholder="Masukkan Email">
+
+            <input type="text" placeholder="Masukkan Password">
+
+            <div class="check-grup">
+                <div class="check">
+                    <input type="checkbox">
+                    <label>Biarkan tetap masuk</label>
+                </div>
+                <!-- shift + alt + f -->
+                <a href="">Lupa Password?</a>
+            </div>
+
+            <button type="button" id="loginmi">LOGIN</button>
+            <button>REGISTER</button>
+
+
+
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('loginmi')
+            .addEventListener("click", arahkan);
+
+        function arahkan() {
+            alert('login')
+            window.location = "../index.html";
+        }
+
+    </script>
+
+</body>
+
+</html>

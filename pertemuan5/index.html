@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pertemuan 5 - Belajar JS</title>
+  </head>
+  <body>
+    <h1>JavaScript - JS</h1>
+
+    <form id="submitForm">
+      <label for="">Nama Lengkap</label>
+      <input type="text" placeholder="isi nama lengkap" id="nama_lengkap" />
+      <br />
+      <!-- ctrl + d -->
+      <span style="color: red" id="errorNama"></span>
+      <br /><br />
+
+      <label for="">Username</label>
+      <input type="text" placeholder="isi username" id="username" />
+      <br />
+      <span style="color: red" id="errorUsername"></span>
+      <br /><br />
+
+      <label for="">Alamat</label>
+      <input type="text" placeholder="isi alamat" id="alamat" />
+      <br />
+      <span style="color: red" id="errorAlamat"></span>
+      <br /><br />
+
+      <button type="submit">Kirim Data</button>
+      <button type="button" id="clear">Clear all</button>
+    </form>
+
+    <p id="data_nama">Nama lengkap :</p>
+    <p id="data_username">Username :</p>
+    <p id="data_alamat">Alamat :</p>
+  </body>
+
+  <script>
+    // document.write("Hello World");
+
+    let submitForm = document.getElementById("submitForm");
+    let clearBtn = document.getElementById("clear");
+
+    // dari inputan form
+    let nama_lengkap = document.getElementById("nama_lengkap");
+    let username = document.getElementById("username");
+    let alamat = document.getElementById("alamat");
+
+    // data yang tampil
+    let data_nama = document.getElementById("data_nama");
+    let data_username = document.getElementById("data_username");
+    let data_alamat = document.getElementById("data_alamat");
+
+    clearBtn.addEventListener("click", function (event) {
+      nama_lengkap.value = "";
+      username.value = "";
+      alamat.value = "";
+
+      data_nama.innerHTML = "Nama lengkap : ";
+      data_username.innerHTML = "Username : ";
+      data_alamat.innerHTML = "Alamat : ";
+
+    });
+
+    submitForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // id pesan error
+      let error_nama = document.getElementById("errorNama");
+      let error_username = document.getElementById("errorUsername");
+      let error_alamat = document.getElementById("errorAlamat");
+
+      let valid = true;
+
+      //   if (percabangan)
+      //   validasi nama lengkap
+      if (nama_lengkap.value == "" || nama_lengkap.value == null) {
+        error_nama.innerHTML = "* Nama lengkap tidak boleh kosong";
+        valid = false;
+      } else if (nama_lengkap.value.length < 5) {
+        error_nama.innerHTML = "* Nama lengkap harus lebih dari 5 karakter";
+        valid = false;
+      } else if (nama_lengkap.value.length > 100) {
+        error_nama.innerHTML = "* Nama lengkap terlalu panjang";
+        valid = false;
+      } else {
+        error_nama.innerHTML = "";
+      }
+
+      //   validasi username
+      if (username.value == "" || username.value == null) {
+        error_username.innerHTML = "* Username tidak boleh kosong";
+        valid = false;
+      } else if (username.value.length < 3) {
+        error_username.innerHTML = "* Username minimal 4 karakter";
+        valid = false;
+      } else {
+        error_username.innerHTML = "";
+      }
+
+      //   validasi alamat
+      if (alamat.value == "" || alamat.value == null) {
+        error_alamat.innerHTML = "* alamat tidak boleh kosong";
+        valid = false;
+      } else if (alamat.value.length < 3) {
+        error_alamat.innerHTML = "* alamat minimal 4 karakter";
+        valid = false;
+      } else {
+        error_alamat.innerHTML = "";
+      }
+
+      if (valid) {
+        data_nama.innerHTML = "Nama lengkap : " + nama_lengkap.value;
+        data_username.innerHTML = "Username : " + username.value;
+        data_alamat.innerHTML = "Alamat : " + alamat.value;
+      } else {
+        data_nama.innerHTML = "Nama lengkap : ";
+        data_username.innerHTML = "Username : ";
+        data_alamat.innerHTML = "Alamat : ";
+      }
+    });
+  </script>
+</html>
